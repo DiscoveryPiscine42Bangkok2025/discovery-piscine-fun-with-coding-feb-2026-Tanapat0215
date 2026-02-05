@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.menu {
+  position: relative;
+  width: 60px;
+  margin: 20px;
+}
+
+.sandwich div {
+  width: 50px;
+  height: 6px;
+  background-color: #333;
+  margin: 8px 0;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 150px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.menu:hover .dropdown {
+  display: block;
+}
