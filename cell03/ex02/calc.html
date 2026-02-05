@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It's over 9000</title>
+</head>
+<body>
+
+  <input type="text" id="left">
+  
+  <select id="op">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+
+  <input type="text" id="right">
+  
+  <input type="submit" value="Try me!" onclick="calculate()">
+
+  <script>
+    function calculate() {
+      var left = document.getElementById("left").value;
+      var right = document.getElementById("right").value;
+      var op = document.getElementById("op").value;
+
+      var a = Number(left);
+      var b = Number(right);
+
+      
+      if (
+        left === "" || right === "" ||
+        isNaN(a) || isNaN(b) ||
+        a < 0 || b < 0 ||
+        !Number.isInteger(a) || !Number.isInteger(b)
+      ) {
+        alert("Error :(");
+        console.log("Error :(");
+        return;
+      }
+
+      
+      if ((op === "/" || op === "%") && b === 0) {
+        alert("It’s over 9000!");
+        console.log("It’s over 9000!");
+        return;
+      }
+
+      var result;
+      if (op === "+") result = a + b;
+      else if (op === "-") result = a - b;
+      else if (op === "*") result = a * b;
+      else if (op === "/") result = a / b;
+      else if (op === "%") result = a % b;
+
+      alert(result);
+      console.log(result);
+    }
+
+    
+    setInterval(function () {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+
+</body>
+</html>
